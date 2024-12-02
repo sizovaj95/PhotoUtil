@@ -7,7 +7,7 @@ import re
 from pillow_heif import register_heif_opener
 
 
-path = Path(__file__).parent.resolve() / "test_files"
+path = Path(r"D:\Julia\Documents\Photos\Gwydir2024")  #Path(__file__).parent.resolve() / "test_files"
 
 register_heif_opener()
 
@@ -37,7 +37,7 @@ def main():
     files = list(os.scandir(path))
     for file in files:
         if re.search(r"\.heic$", file.name, re.I):
-            convert_from_heic(file)
+            convert_from_heic(file, True)
 
 
 if __name__ == "__main__":
